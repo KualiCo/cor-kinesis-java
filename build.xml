@@ -1,19 +1,10 @@
 <!-- Ant build script for compiling and running the Amazon Kinesis Sample Applications.
      Don't forget to fill in your AWS access credentials in (~/.aws/credentials)
      before trying to run them. -->
-<project name="Amazon Kinesis Sample Applications" default="run-kinesis-record-producer" basedir=".">
+<project name="Amazon Kinesis Sample Applications" default="run-kinesis-application" basedir=".">
 	<!-- The Amazon Kinesis Client Library jar file is downloaded to the tmp directory. -->
 	<property name="tmpDir" value="${basedir}/tmp"/>
 	<property name="amazon.kinesis.client.version" value="1.2.1" />
-
-	<target name="run-kinesis-record-producer"
-			description="Run the Amazon Kinesis sample that sends records to a stream"
-			depends="compile">
-		<echo>This sample will create an Amazon Kinesis stream. Use the target "delete-sample-resources" target to delete it.</echo>
-		<sleep seconds="2"/>
-
-		<java classname="AmazonKinesisRecordProducerSample" classpathref="sample.classpath" fork="true"/>
-	</target>
 
 	<target name="run-kinesis-application"
 			description="Run the Amazon Kinesis Application sample that reads records from a stream"
