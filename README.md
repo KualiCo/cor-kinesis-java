@@ -28,7 +28,7 @@ Modify the app.properties file to work in your environment by changing the strea
 - `<application>` = abbreviated name of the application - stu-cm, res-coi, etc.
 - `<institution>` = url name of your institution - monsters, byu, coventry, etc.
 ```
-vim app.properties
+vim credentials
 ```
 
 Update the .bash_profile or .profile file in the home directory of the user that will be running the app.  You will add the AWS environment variables that you received from Kuali.
