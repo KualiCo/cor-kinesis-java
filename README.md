@@ -31,28 +31,16 @@ Modify the app.properties file to work in your environment by changing the strea
 vim credentials
 ```
 
-Update the .bash_profile or .profile file in the home directory of the user that will be running the app.  You will add the AWS environment variables that you received from Kuali.
-```
-vim ~/.bash_profile
-
-export AWS_SECRET_ACCESS_KEY=<secret_key_provided_by_kuali>
-export AWS_ACCESS_KEY_ID=<key_id_provided_by_kuali>
-```
-
-Source the newly updated .bash_profile or .profile, or log out and back in to get the updated environment variables.
-
-```
-. ~/.bash_profile
-```
+In com.amazonaws.services.kinesis.clientlibrary.lib.worker.KinesisClientLibConfiguration, specify the region in one of the following ways:
+- Use the "withRegionName" method
+- Use the complete constructor, though it needs a couple dozen arguments (the default values for the constructor can all be found in the provided code)
 
 Make changes to the code so it will not only log messages, but also update make changes to databases and take other actions.
 
 ## Use
 
 Run by building with ant and then running.
-```
-./bin/kcl-bootstrap --java /usr/bin/java -e -p ./app.properties
-```
+
 With it running, as you make changes in your Kuali application (e.g., Curriculum Management, Kuali Research, etc.), those changes will be logged to the log file.  They will also be written to databases and and other actions that you have defined in the code will be performed.
 
 ## Message Format
