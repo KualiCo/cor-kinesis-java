@@ -23,10 +23,10 @@ git clone https://github.com/awslabs/amazon-kinesis-client.git
 ```
 
 3. Modify the sample.properties file to work in your environment by changing the streamName and applicationName to cor-kinesis-`<region>`-`<environment>`-`<application>`-`<institution>` where:
-- `<region>` = AWS region - saas1 (Oregon), saas2 (Ireland)
-- `<environment>` = environment of application - tst, sbx, stg, or prd
-- `<application>` = abbreviated name of the application - stu-cm, res-coi, etc.
-- `<institution>` = url name of your institution - monsters, byu, coventry, etc.
+   * `<region>` = AWS region - saas1 (Oregon), saas2 (Ireland)
+   * `<environment>` = environment of application - tst, sbx, stg, or prd
+   * `<application>` = abbreviated name of the application - stu-cm, res-coi, etc.
+   * `<institution>` = url name of your institution - monsters, byu, coventry, etc.
 
 4. Edit the credentials file and put in your AWS credentials provided by Kuali.  
 ```
@@ -35,8 +35,8 @@ vim credentials
 5. Move the credentials files to .aws/credentials
 
 6. In com.amazonaws.services.kinesis.clientlibrary.lib.worker.KinesisClientLibConfiguration in the amazon-kinesis-client repo that you downloaded, specify the region in one of the following ways:
-- Use the "withRegionName" method
-- Use the complete constructor, though it needs a couple dozen arguments (the default values for the constructor can all be found in the provided code)
+   * Use the "withRegionName" method
+   * Use the complete constructor, though it needs a couple dozen arguments (the default values for the constructor can all be found in the provided code)
 
 7. Make changes to the code so it will not only log messages, but also update make changes to databases and take other actions.
 
