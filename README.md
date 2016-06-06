@@ -12,33 +12,33 @@ Also, the client state information is saved to Amazon DynamoDB, which is necessa
 
 ## Installation
 
-### Clone the repo
+##### Clone the repo
 ```
 git clone https://github.com/KualiCo/core-kinesis-java.git
 ```
 
-### Clone the amazon-kinesis-client repo
+##### Clone the amazon-kinesis-client repo
 ```
 git clone https://github.com/awslabs/amazon-kinesis-client.git
 ```
 
-### Modify the sample.properties file to work in your environment by changing the streamName and applicationName to cor-kinesis-`<region>`-`<environment>`-`<application>`-`<institution>` where:
+##### Modify the sample.properties file to work in your environment by changing the streamName and applicationName to cor-kinesis-`<region>`-`<environment>`-`<application>`-`<institution>` where:
    * `<region>` = AWS region - saas1 (Oregon), saas2 (Ireland)
    * `<environment>` = environment of application - tst, sbx, stg, or prd
    * `<application>` = abbreviated name of the application - stu-cm, res-coi, etc.
    * `<institution>` = url name of your institution - monsters, byu, coventry, etc.
 
-### Edit the credentials file and put in your AWS credentials provided by Kuali.  
+##### Edit the credentials file and put in your AWS credentials provided by Kuali.  
 ```
 vim credentials
 ```
-### Move the credentials files to .aws/credentials
+##### Move the credentials files to .aws/credentials
 
-### In com.amazonaws.services.kinesis.clientlibrary.lib.worker.KinesisClientLibConfiguration in the amazon-kinesis-client repo that you downloaded, specify the region in one of the following ways:
+##### In com.amazonaws.services.kinesis.clientlibrary.lib.worker.KinesisClientLibConfiguration in the amazon-kinesis-client repo that you downloaded, specify the region in one of the following ways:
    * Use the "withRegionName" method
    * Use the complete constructor, though it needs a couple dozen arguments (the default values for the constructor can all be found in the provided code)
 
-### Make changes to the code so it will not only log messages, but also update make changes to databases and take other actions.
+##### Make changes to the code so it will not only log messages, but also update make changes to databases and take other actions.
 
 ## Use
 
